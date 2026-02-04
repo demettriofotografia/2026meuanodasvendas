@@ -37,7 +37,6 @@ const App: React.FC = () => {
     }
   ];
 
-  // IDs dos vídeos reais fornecidos, incluindo os IDs para o vídeo 05 e 06
   const videoIds = [
     'pWk_06Ilzjs',
     'GH-lEMOIoQg',
@@ -78,7 +77,7 @@ const App: React.FC = () => {
     {
       dia: "09",
       mes: "Fevereiro",
-      foto: "https://lh3.googleusercontent.com/d/15ZFK2tLthQ4shiErh4WPj_cf_cUiBIyF",
+      foto: "https://lh3.googleusercontent.com/d/1XNc_ez_jX3Th3fg9N7miCQKMbOi9VnqJ",
       topicos: [
         "Que fundamentos te fazem performar em vendas",
         "Identifique a imobiliária que acelera suas vendas",
@@ -91,7 +90,7 @@ const App: React.FC = () => {
     {
       dia: "10",
       mes: "Fevereiro",
-      foto: "https://lh3.googleusercontent.com/d/1kjY3vc8jOCUJJkTF_dfDolOG2XrqXxS4",
+      foto: "https://lh3.googleusercontent.com/d/14kQ9-BXci2U1qKSakIGIQzEowS3PDcxT",
       topicos: [
         "Como converter vendas rapidamente",
         "Como escalar a quantidade de vendas no mês",
@@ -103,7 +102,7 @@ const App: React.FC = () => {
     {
       dia: "11",
       mes: "Fevereiro",
-      foto: "https://lh3.googleusercontent.com/d/19Xcc0dsl9V1qhx6aJREMN56sxVa11yZU",
+      foto: "https://lh3.googleusercontent.com/d/10IcMaJ9eEAqC_GIDuaa9EZQIKNl5x4jB",
       topicos: [
         "O que faz um corretor de imóveis vender rapidamente",
         "Comunicação leve e conquistadora",
@@ -114,20 +113,21 @@ const App: React.FC = () => {
     }
   ];
 
-  const GoldCTA = ({ extraClass = "py-8 md:py-12" }: { extraClass?: string }) => (
+  const MainCTA = ({ extraClass = "py-8 md:py-12" }: { extraClass?: string }) => (
     <div className={`flex justify-center w-full bg-transparent ${extraClass}`}>
       <button 
         onClick={scrollToTop}
-        className="w-[90%] md:w-auto md:min-w-[450px] bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-300 text-black px-8 py-5 rounded-full font-black text-xs md:text-sm lg:text-base uppercase tracking-widest shadow-[0_0_30px_rgba(245,158,11,0.3)] transition-all active:scale-95 flex items-center justify-center gap-3 group"
+        className="relative overflow-hidden w-[90%] md:w-auto md:min-w-[450px] bg-gradient-to-r from-[#AF9274] via-[#ecd6bd] to-[#AF9274] hover:brightness-125 text-[#2E394B] px-8 py-6 rounded-full font-black text-sm md:text-base lg:text-lg uppercase tracking-widest shadow-[0_0_40px_rgba(175,146,116,0.5)] transition-all active:scale-95 flex items-center justify-center gap-3 group border-2 border-[#AF9274]/30"
       >
+        <span className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[200%] transition-all duration-1000 ease-in-out"></span>
         QUERO PARTICIPAR E GARANTIR MINHA VAGA!
-        <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+        <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
       </button>
     </div>
   );
 
   return (
-    <div className="min-h-screen selection:bg-amber-500 selection:text-black bg-[#050505] text-white overflow-x-hidden font-sans">
+    <div className="min-h-screen selection:bg-[#AF9274] selection:text-[#2E394B] bg-[#2E394B] text-white overflow-x-hidden font-sans">
       <style>
         {`
           @keyframes marquee {
@@ -143,22 +143,20 @@ const App: React.FC = () => {
             width: fit-content;
             animation: marquee 40s linear infinite;
           }
-          .white-gold-shimmer {
+          .gold-shimmer {
             background: linear-gradient(
               90deg, 
-              #d1d1d1 0%, 
-              #e5e5e5 25%, 
-              #ffffff 50%, 
-              #e5e5e5 75%, 
-              #d1d1d1 100%
+              #AF9274 0%, 
+              #FFFFFF 50%, 
+              #AF9274 100%
             );
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shimmer 4s infinite linear;
           }
-          .gold-line-glow {
-            background: radial-gradient(circle, #bf953f 0%, rgba(191, 149, 63, 0) 70%);
+          .accent-line-glow {
+            background: radial-gradient(circle, #AF9274 0%, rgba(175, 146, 116, 0) 70%);
           }
           .cronograma-row {
             position: relative;
@@ -167,34 +165,25 @@ const App: React.FC = () => {
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            background: #080808;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            background: #2E394B; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.5s ease;
             overflow: hidden;
             min-height: 320px;
             display: flex;
             align-items: center;
           }
-          .cronograma-row::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
-            opacity: 0.05;
-            pointer-events: none;
-            z-index: 2;
-          }
           .cronograma-row:hover {
-            background: #0c0c0c;
+            background: #38465a;
           }
           .big-number-glow {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             line-height: 0.8;
-            color: #f59e0b;
+            color: #AF9274;
             font-style: italic;
-            text-shadow: 0 0 30px rgba(245, 158, 11, 0.4), 0 0 60px rgba(245, 158, 11, 0.2);
-            filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.3));
+            text-shadow: 0 0 30px rgba(175, 146, 116, 0.4), 0 0 60px rgba(175, 146, 116, 0.2);
+            filter: drop-shadow(0 0-10px rgba(175, 146, 116, 0.3));
             z-index: 5;
           }
           .bg-photo-stretch {
@@ -204,30 +193,20 @@ const App: React.FC = () => {
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            opacity: 0.85;
-            transition: opacity 0.5s ease, transform 0.8s ease, filter 0.5s ease;
-            filter: contrast(1.1) brightness(0.7);
+            opacity: 0.8;
+            transition: opacity 0.5s ease, transform 0.8s ease;
           }
           .cronograma-row:hover .bg-photo-stretch {
             opacity: 1;
             transform: scale(1.05);
-            filter: contrast(1.2) brightness(0.8);
-          }
-          .mask-right {
-            mask-image: linear-gradient(to left, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
-          }
-          .mask-left {
-            mask-image: linear-gradient(to right, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
           }
           .text-outline-dark {
             text-shadow: 
-              -1px -1px 0 #000,  
-               1px -1px 0 #000,
-              -1px  1px 0 #000,
-               1px  1px 0 #000,
-               0 4px 15px rgba(0,0,0,1);
+              -1px -1px 0 #2E394B,  
+               1px -1px 0 #2E394B,
+              -1px  1px 0 #2E394B,
+               1px  1px 0 #2E394B,
+               0 4px 15px rgba(46, 57, 75, 1);
           }
           .fade-transition {
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -244,18 +223,18 @@ const App: React.FC = () => {
       </style>
 
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/5">
+      <header className="fixed top-0 w-full z-50 bg-[#2E394B]/80 backdrop-blur-xl border-b border-white/5">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <img 
               src="https://lh3.googleusercontent.com/d/1bv5Ps27gf3DuBVAjmRpX63sXaVQ0U9ol" 
               alt="Altemir Rocha Logo" 
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-90"
             />
           </div>
           <div className="hidden md:block">
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[9px] font-black uppercase tracking-widest">
-              <span className="w-1 h-1 bg-amber-500 rounded-full animate-pulse"></span>
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#AF9274]/10 border border-[#AF9274]/20 text-[#AF9274] text-[10px] font-black uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 bg-[#AF9274] rounded-full animate-pulse"></span>
               SEJA UM CORRETOR VENCEDOR!
             </div>
           </div>
@@ -266,92 +245,92 @@ const App: React.FC = () => {
       <section className="relative flex flex-col justify-center pt-32 pb-16 overflow-hidden min-h-[80vh] lg:min-h-[85vh]">
         <div className="absolute inset-0 z-0 h-full">
           <img 
-            src="https://lh3.googleusercontent.com/d/1-yTcoRXlzyCmjRUCDbWn9FLrSFyDITdI" 
+            src="https://lh3.googleusercontent.com/d/16XGQ-7GRHXhk0dMcSiEJqJo90BdfvIdg" 
             alt="Altemir Rocha - Mentor" 
-            className="w-full h-full object-cover object-top lg:object-[10%_0%] opacity-70 lg:opacity-100 transition-opacity duration-700"
+            className="w-full h-full object-cover object-top lg:object-[10%_0%] opacity-80 lg:opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/40 to-black/95 hidden lg:block"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#050505] lg:hidden"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2E394B]/40 to-[#2E394B] hidden lg:block"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#2E394B]/40 via-transparent to-[#2E394B] lg:hidden"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center lg:items-end text-center lg:text-right max-w-7xl ml-auto space-y-6">
             <div className="lg:max-w-2xl space-y-3">
-              <h1 className="text-[2.07rem] md:text-[2.58rem] lg:text-[3.12rem] font-black leading-tight tracking-tighter uppercase drop-shadow-2xl">
+              <h1 className="text-[2.07rem] md:text-[2.58rem] lg:text-[3.12rem] font-black leading-tight tracking-tighter uppercase drop-shadow-2xl text-white">
                 VENDA TODOS OS MESES <br />
-                <span className="text-amber-500">COM TRANQUILIDADE</span> <br />
+                <span className="text-[#AF9274]">COM TRANQUILIDADE</span> <br />
                 E ALTAS COMISSÕES.
               </h1>
               
-              <div className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 font-bold text-[9px] uppercase tracking-[0.2em]">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-[#AF9274]/20 border border-[#AF9274]/40 text-[#AF9274] font-bold text-[9px] uppercase tracking-[0.2em]">
                 3 Noites de treinamento 100% Online e gratuito
               </div>
             </div>
 
             <div className="space-y-5 lg:max-w-lg">
-              <p className="text-sm md:text-lg text-gray-400 font-medium leading-relaxed drop-shadow-lg font-caviar">
+              <p className="text-sm md:text-lg text-white font-semibold leading-relaxed drop-shadow-lg font-caviar">
                 O passo a passo validado para corretores que desejam dominar o mercado imobiliário em 2026 com previsibilidade e escala.
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-end gap-3 mt-2">
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-3 py-2 rounded-xl border border-white/5">
-                  <Calendar className="text-amber-500" size={14} />
+                <div className="flex items-center gap-2 bg-[#2E394B]/60 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20">
+                  <Calendar className="text-[#AF9274]" size={14} />
                   <span className="font-bold text-xs">09-10-11 FEV</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-3 py-2 rounded-xl border border-white/5">
-                  <Clock className="text-amber-500" size={14} />
+                <div className="flex items-center gap-2 bg-[#2E394B]/60 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20">
+                  <Clock className="text-[#AF9274]" size={14} />
                   <span className="font-bold text-xs">19:00 (Brasília)</span>
                 </div>
               </div>
             </div>
 
             <div className="w-full lg:max-w-3xl pt-4">
-              <div className="bg-black/80 backdrop-blur-2xl p-6 md:p-8 rounded-[1.5rem] border border-white/10 shadow-2xl relative">
-                <div className="absolute -top-3 left-1/2 lg:left-auto lg:right-6 -translate-x-1/2 lg:translate-x-0 bg-amber-500 text-black px-4 py-1 rounded-full font-black text-[8px] uppercase tracking-widest">
+              <div className="bg-[#2E394B]/95 backdrop-blur-2xl p-6 md:p-8 rounded-[1.5rem] border border-white/20 shadow-2xl relative">
+                <div className="absolute -top-3 left-1/2 lg:left-auto lg:right-6 -translate-x-1/2 lg:translate-x-0 bg-[#AF9274] text-[#2E394B] px-5 py-1 rounded-full font-black text-[9px] uppercase tracking-widest">
                   Inscrição Gratuita
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-4 items-center justify-center">
                   <div className="w-full space-y-1 text-left">
-                    <label className="text-[8px] uppercase font-black text-gray-500 tracking-widest ml-1">Nome</label>
+                    <label className="text-[8px] uppercase font-black text-white/70 tracking-widest ml-1">Nome</label>
                     <input 
                       type="text" 
                       name="nome"
                       value={formData.nome}
                       onChange={handleInputChange}
                       placeholder="Nome completo"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500/50 transition-all placeholder:text-gray-600"
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-[#AF9274]/50 transition-all placeholder:text-white/50"
                       required
                     />
                   </div>
                   <div className="w-full space-y-1 text-left">
-                    <label className="text-[8px] uppercase font-black text-gray-500 tracking-widest ml-1">E-mail</label>
+                    <label className="text-[8px] uppercase font-black text-white/70 tracking-widest ml-1">E-mail</label>
                     <input 
                       type="email" 
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="seu@email.com"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500/50 transition-all placeholder:text-gray-600"
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-[#AF9274]/50 transition-all placeholder:text-white/50"
                       required
                     />
                   </div>
                   <div className="w-full space-y-1 text-left">
-                    <label className="text-[8px] uppercase font-black text-gray-500 tracking-widest ml-1">WhatsApp</label>
+                    <label className="text-[8px] uppercase font-black text-white/70 tracking-widest ml-1">WhatsApp</label>
                     <input 
                       type="tel" 
                       name="whatsapp"
                       value={formData.whatsapp}
                       onChange={handleInputChange}
                       placeholder="(00) 00000-0000"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500/50 transition-all placeholder:text-gray-600"
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-[#AF9274]/50 transition-all placeholder:text-white/50"
                       required
                     />
                   </div>
 
                   <button 
                     type="submit"
-                    className="w-full lg:w-auto lg:min-w-[140px] bg-gradient-to-r from-amber-600 to-amber-400 hover:from-amber-500 hover:to-amber-300 text-black h-[42px] mt-3 lg:mt-[1.1rem] rounded-lg font-black text-[10px] uppercase tracking-tighter shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full lg:w-auto lg:min-w-[140px] bg-gradient-to-r from-[#AF9274] to-[#c5ab8f] hover:brightness-110 text-[#2E394B] h-[45px] mt-3 lg:mt-[1.1rem] rounded-lg font-black text-[10px] uppercase tracking-tighter shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
                     INSCREVER
                     <ArrowRight size={14} />
@@ -364,57 +343,57 @@ const App: React.FC = () => {
       </section>
 
       {/* Faixa Marquee */}
-      <div className="relative py-4 bg-[#050505] overflow-hidden z-20">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
-          <div className="absolute inset-0 gold-line-glow opacity-40 blur-[2px] scale-y-[2]"></div>
+      <div className="relative py-6 bg-[#2E394B] overflow-hidden z-20 border-y border-white/5">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#AF9274] to-transparent">
+          <div className="absolute inset-0 accent-line-glow opacity-40 blur-[2px] scale-y-[2]"></div>
         </div>
 
         <div className="animate-marquee whitespace-nowrap py-1">
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center mx-6 md:mx-12">
-              <span className="white-gold-shimmer text-base md:text-lg lg:text-xl font-light uppercase tracking-[0.35em] drop-shadow-sm leading-none">
+              <span className="gold-shimmer text-base md:text-lg lg:text-xl font-light uppercase tracking-[0.35em] drop-shadow-sm leading-none">
                 2026 MEU ANO DAS VENDAS
               </span>
-              <div className="mx-8 md:mx-16 w-[1px] h-4 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+              <div className="mx-8 md:mx-16 w-[1px] h-4 bg-white/10"></div>
             </div>
           ))}
         </div>
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
-          <div className="absolute inset-0 gold-line-glow opacity-40 blur-[2px] scale-y-[2]"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#AF9274] to-transparent">
+          <div className="absolute inset-0 accent-line-glow opacity-40 blur-[2px] scale-y-[2]"></div>
         </div>
       </div>
 
       {/* Seção Cronograma */}
-      <section className="relative pt-12 md:pt-16 pb-0 bg-[#050505]">
+      <section className="relative pt-16 md:pt-24 pb-0 bg-[#2E394B]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter italic max-w-4xl mx-auto leading-tight text-center">
-              O que você vai aprender <br /> <span className="text-amber-500">nessas três noites:</span>
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter italic max-w-4xl mx-auto leading-tight text-center text-white">
+              O que você vai aprender <br /> <span className="text-[#AF9274]">nessas três noites:</span>
             </h2>
-            <div className="h-1 w-20 bg-amber-500 mx-auto mt-6 rounded-full"></div>
+            <div className="h-1.5 w-24 bg-[#AF9274] mx-auto mt-6 rounded-full opacity-60"></div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {cronograma.map((item, idx) => (
               <div key={idx} className="cronograma-row group">
                 <img 
                   src={item.foto} 
                   alt={`Dia ${item.dia}`} 
-                  className={`bg-photo-stretch ${item.layout === "number-topic-photo" ? "mask-right" : "mask-left"}`}
+                  className="bg-photo-stretch"
                 />
                 <div className="container mx-auto max-w-5xl relative z-10 w-full px-6">
-                  <div className={`flex flex-col md:flex-row items-center justify-between w-full py-10 gap-8 md:gap-0 ${item.layout === "photo-topic-number" ? "md:flex-row-reverse" : ""}`}>
+                  <div className={`flex flex-col md:flex-row items-center justify-between w-full py-12 gap-8 md:gap-0 ${item.layout === "photo-topic-number" ? "md:flex-row-reverse" : ""}`}>
                     <div className={`w-full md:w-1/6 flex ${item.layout === "number-topic-photo" ? "md:justify-start" : "md:justify-end"} justify-center relative`}>
-                      <span className={`big-number-glow text-[7rem] md:text-[9rem] lg:text-[11rem] transition-all duration-500 group-hover:scale-105 inline-block select-none relative ${item.layout === "number-topic-photo" ? "md:-left-20" : "md:-right-20"}`}>
+                      <span className={`big-number-glow text-[7.5rem] md:text-[9.5rem] lg:text-[11.5rem] transition-all duration-500 group-hover:scale-105 inline-block select-none relative ${item.layout === "number-topic-photo" ? "md:-left-20" : "md:-right-20"}`}>
                         {item.dia}
                       </span>
                     </div>
                     <div className="w-full md:w-4/6 flex justify-center">
-                      <div className="flex flex-col items-start space-y-4">
+                      <div className="flex flex-col items-start space-y-5">
                         {item.topicos.map((topico, tIdx) => (
                           <div key={tIdx} className="flex gap-4 items-start group/item">
-                            <CheckCircle2 className="text-amber-500 mt-1 shrink-0 drop-shadow-[0_2px_5px_rgba(0,0,0,1)]" size={16} />
+                            <CheckCircle2 className="text-[#AF9274] mt-1 shrink-0 drop-shadow-[0_2px_10px_rgba(0,0,0,1)]" size={20} />
                             <p className="text-sm md:text-base text-white font-black uppercase tracking-tight text-left leading-tight text-outline-dark">
                               {topico}
                             </p>
@@ -431,35 +410,35 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Botão CTA Dourado - Antes dos depoimentos (Ajustado para ser proporcional e não muito colado) */}
-      <GoldCTA extraClass="py-16 md:py-24" />
+      {/* Botão CTA - Antes dos depoimentos */}
+      <MainCTA extraClass="py-20 md:py-28" />
 
-      {/* Seção Depoimentos (Fundo Branco) */}
-      <section className="relative py-8 md:py-10 bg-white overflow-hidden">
+      {/* Seção Depoimentos (Fundo Claro) */}
+      <section className="relative py-16 md:py-24 bg-[#fdfdfd] overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center mb-4 md:mb-6">
-            <h2 className="text-[2.07rem] md:text-[2.58rem] lg:text-[3.12rem] font-black leading-tight tracking-tighter uppercase text-black">
-              Mas realmente <span className="text-amber-600">Funciona?</span>
+          <div className="flex flex-col items-center text-center mb-10 md:mb-12">
+            <h2 className="text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-black leading-tight tracking-tighter uppercase text-[#2E394B]">
+              Mas realmente <span className="text-[#AF9274]">Funciona?</span>
             </h2>
-            <p className="text-gray-500 font-caviar text-[10px] md:text-xs uppercase tracking-widest mt-1">
+            <p className="text-[#2E394B]/80 font-bold text-[11px] md:text-xs uppercase tracking-widest mt-2">
               Olha o que quem já participou está dizendo
             </p>
           </div>
-          <div className="max-w-4xl mx-auto relative min-h-[160px] flex items-center justify-center">
+          <div className="max-w-4xl mx-auto relative min-h-[180px] flex items-center justify-center">
             <div className={`fade-transition ${fade ? 'fade-visible' : 'fade-hidden'} flex flex-col items-center text-center`}>
-              <div className="relative mb-4">
-                <Quote className="text-amber-500/20 absolute -top-6 -left-8 scale-[2]" size={32} strokeWidth={1} />
-                <p className="text-[0.65rem] md:text-sm font-medium leading-relaxed max-w-xl text-gray-900 italic px-4">
+              <div className="relative mb-6">
+                <Quote className="text-[#AF9274]/20 absolute -top-8 -left-10 scale-[2.5]" size={40} strokeWidth={1} />
+                <p className="text-sm md:text-base lg:text-lg font-bold leading-relaxed max-w-2xl text-[#2E394B] italic px-6">
                   "{testimonials[currentTestimonial].text}"
                 </p>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <span className="font-black text-amber-600 text-[10px] md:text-xs uppercase tracking-widest">
+                <span className="font-black text-[#AF9274] text-[11px] md:text-sm uppercase tracking-widest">
                   — {testimonials[currentTestimonial].author}
                 </span>
-                <div className="flex items-center gap-1.5 mt-1">
+                <div className="flex items-center gap-1.5 mt-2">
                   {[...Array(testimonials[currentTestimonial].stars)].map((_, i) => (
-                    <Star key={i} className="text-amber-500 fill-amber-500" size={14} />
+                    <Star key={i} className="text-[#AF9274] fill-[#AF9274]" size={16} />
                   ))}
                 </div>
               </div>
@@ -469,41 +448,41 @@ const App: React.FC = () => {
       </section>
 
       {/* Mentor Section */}
-      <section className="relative pb-12 md:pb-24 bg-black overflow-hidden min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#050505]">
+      <section className="relative pb-16 md:pb-32 bg-[#2E394B] overflow-hidden min-h-[85vh] flex items-center">
+        <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#2E394B]">
           <img 
             src="https://lh3.googleusercontent.com/d/1rIUqSHaRULn8942t5PN54VBGEjz_RV13" 
             alt="Fundo Altemir Rocha" 
-            className="w-full h-full object-cover opacity-80 lg:opacity-95 transition-all duration-1000 scale-100 object-center"
+            className="w-full h-full object-cover opacity-80 lg:opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2E394B] via-[#2E394B]/30 to-transparent"></div>
         </div>
         <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12">
           <div className="flex flex-col lg:flex-row-reverse items-center justify-between gap-12">
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center">
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-tight text-right drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-tight text-right text-white">
                 QUEM SERÁ <br />
-                <span className="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.4)] italic">SEU MENTOR?</span>
+                <span className="text-[#AF9274] italic">SEU MENTOR?</span>
               </h2>
             </div>
-            <div className="w-full lg:w-1/2 text-left space-y-5">
-              <div className="space-y-4 text-gray-200 text-xs md:text-sm lg:text-[1.05rem] leading-relaxed font-normal max-w-xl font-caviar">
-                <p className="drop-shadow-lg text-white/90">
-                  Meu nome é <span className="text-amber-500 font-bold text-lg md:text-xl">Altemir Rocha.</span> <br />
+            <div className="w-full lg:w-1/2 text-left space-y-6">
+              <div className="space-y-5 text-white text-sm md:text-base lg:text-[1.1rem] leading-relaxed font-bold max-w-xl font-caviar drop-shadow-lg">
+                <p>
+                  Meu nome é <span className="text-[#AF9274] font-black text-xl md:text-2xl">Altemir Rocha.</span> <br />
                   Sou corretor de imóveis, empresário e mentor dos melhores <br />
-                  <span className="font-bold">corretores do Brasil.</span>
+                  <span className="font-black text-white">corretores do Brasil.</span>
                 </p>
-                <p className="drop-shadow-lg opacity-95 text-white/85">
+                <p>
                   Especializado no atendimento ao cliente, sou considerado <br />
-                  <span className="font-bold text-white">o maior gerador de corretores de sucesso do Brasil,</span> <br />
+                  <span className="font-black text-white">o maior gerador de corretores de sucesso do Brasil,</span> <br />
                   através dos meus treinamentos e mentorias.
                 </p>
-                <p className="drop-shadow-lg opacity-90 text-white/80">
+                <p>
                   Tenho levado corretores e corretoras a faturarem 10, 15, 20 mil por semana com tudo que ensino em meus treinamentos e mentorias, gerando um grande crescimento e consistência nas vendas.
                 </p>
-                <p className="drop-shadow-lg opacity-90 text-white/80">
+                <p>
                   Com uma gama de treinamentos que vão de <br />
-                  <span className="text-amber-400">R$ 997,00 até R$ 150.000,00 para ajudar corretores</span> <br />
+                  <span className="text-[#AF9274]">R$ 997,00 até R$ 150.000,00 para ajudar corretores</span> <br />
                   e imobiliários a terem sucesso seguindo o caminho certo!
                 </p>
               </div>
@@ -513,66 +492,71 @@ const App: React.FC = () => {
       </section>
 
       {/* Seção de Frase Destaque */}
-      <section className="relative py-8 bg-[#050505] flex justify-center overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
-          <div className="absolute inset-0 gold-line-glow opacity-30 blur-[1px] scale-y-[1.5]"></div>
+      <section className="relative py-12 bg-[#2E394B] flex justify-center overflow-hidden border-y border-white/5">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#AF9274] to-transparent">
+          <div className="absolute inset-0 accent-line-glow opacity-30 blur-[1px] scale-y-[1.5]"></div>
         </div>
         <div className="container mx-auto px-6 text-center">
-          <div className="max-w-4xl mx-auto flex flex-col items-center leading-[1.2]">
-            <span className="font-light uppercase text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.3em] text-white/60 mb-1 text-center">
+          <div className="max-w-4xl mx-auto flex flex-col items-center">
+            <span className="font-bold uppercase text-[9px] md:text-[10px] lg:text-[11px] tracking-wider text-white mb-0.5 text-center drop-shadow-md leading-tight">
               "QUERO QUE, NESTA MENTORIA, A GENTE ALCANCE OS PATAMARES QUE VOCÊ MERECE E DESEJA,
             </span>
-            <span className="font-black uppercase text-[10px] md:text-[11px] lg:text-[12px] tracking-[0.4em] text-amber-500 drop-shadow-[0_0_8px_rgba(245,158,11,0.25)] my-1">
+            <span className="font-black uppercase text-[11px] md:text-[12px] lg:text-[14px] tracking-widest text-[#AF9274] drop-shadow-[0_0_10px_rgba(0,0,0,0.5)] my-0.5 leading-tight">
               MUITO MAIS ALTOS.
             </span>
-            <span className="font-light uppercase text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.3em] text-white/60 mt-1">
+            <span className="font-bold uppercase text-[9px] md:text-[10px] lg:text-[11px] tracking-wider text-white mt-0.5 text-center drop-shadow-md leading-tight">
               E A CADA PASSO, CONSTRUIR UMA VIDA MAIS TRANQUILA, COM MAIS NEGÓCIOS FECHADOS."
             </span>
+            <img 
+              src="https://lh3.googleusercontent.com/d/1ia5oofY83aPR1m9ZAl1qaCFxxmnQn8Y7" 
+              alt="Logo Dr. Matheus Casé" 
+              className="h-10 md:h-12 w-auto mt-6 opacity-90 object-contain drop-shadow-[0_0_10px_rgba(175,146,116,0.3)]"
+            />
           </div>
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
-          <div className="absolute inset-0 gold-line-glow opacity-30 blur-[1px] scale-y-[1.5]"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#AF9274] to-transparent">
+          <div className="absolute inset-0 accent-line-glow opacity-30 blur-[1px] scale-y-[1.5]"></div>
         </div>
       </section>
 
       {/* Seção de Depoimentos em Vídeo Real */}
-      <section className="relative py-12 md:py-20 bg-[#050505] overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-[#2E394B] overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-tight max-w-4xl mx-auto">
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-tight max-w-4xl mx-auto text-white">
               Dá uma olhada no que corretores falam <br /> 
-              <span className="text-amber-500">depois dos treinamentos do Altemir:</span>
+              <span className="text-[#AF9274]">depois dos treinamentos do Altemir:</span>
             </h2>
-            <div className="h-1 w-20 bg-amber-500 mx-auto mt-6 rounded-full opacity-50"></div>
+            <div className="h-1.5 w-24 bg-[#AF9274] mx-auto mt-8 rounded-full opacity-60"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
             {videoIds.map((id, i) => (
               <div 
                 key={i} 
-                className="group relative aspect-video bg-black rounded-xl overflow-hidden border border-white/5 hover:border-amber-500/40 transition-all duration-500 shadow-2xl"
+                className="group relative aspect-video bg-[#38465a] rounded-2xl overflow-hidden border border-white/10 hover:border-[#AF9274]/50 transition-all duration-500 shadow-2xl"
               >
                 <iframe 
-                  className="w-full h-full"
+                  className="w-full h-full transition-all duration-700"
                   src={`https://www.youtube.com/embed/${id}?modestbranding=1&rel=0`}
                   title={`Depoimento Corretor ${i + 1}`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
-                <div className="absolute inset-0 pointer-events-none border border-transparent group-hover:border-amber-500/30 transition-all duration-500 rounded-xl z-10"></div>
+                <div className="absolute inset-0 pointer-events-none border border-transparent group-hover:border-[#AF9274]/40 transition-all duration-500 rounded-2xl z-10"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Botão CTA Dourado - Final da página */}
-      <GoldCTA />
+      {/* Botão CTA Final */}
+      <MainCTA extraClass="py-12 md:py-16" />
 
       {/* Footer */}
-      <footer className="py-12 bg-[#050505] border-t border-white/5 text-center">
-        <p className="text-gray-600 text-[10px] font-black uppercase tracking-[0.4em]">
+      <footer className="py-12 bg-[#2E394B] border-t border-white/10 text-center">
+        <p className="text-white/40 text-[10px] font-black uppercase tracking-[0.5em]">
           &copy; 2026 Altemir Rocha Mentoria • Excelência no Mercado Imobiliário
         </p>
       </footer>
